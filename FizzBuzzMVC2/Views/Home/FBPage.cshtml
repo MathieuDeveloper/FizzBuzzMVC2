@@ -1,0 +1,42 @@
+﻿
+
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-lg-2 mt-5">
+        <div class="col-12 col-md-4 border-end">
+            <h1 class="fw-bold lh-1 mb-3 mt-5">FIZZBUZZ: Projet de codage par Mathieu Developer</h1>
+            <h4 class="lead">
+                Elle compte et dit vise ou FIZZBUZZ. Un exercice de codage en javascript
+                utilisant des boucles. L'application web présente les nombres de 1 à 100.
+                Pour les multiples de "3" elle affiche "Dit", pour les multiples de "5" elle affiche "Vise"
+                , pour les multiple des deux "3" et "5" elle affiche "FIZZBUZZ".
+            </h4>
+            <h2 class="mt-5">Instructions</h2>
+            <p class="text-dark">
+                Entrez une valeur "Dit" et une valeur "Vise". Appuyer sur le bouton, les
+                valeurs s'affichent.
+            </p>
+        </div>
+        <div class="col-12 col-md-8">
+            <div>
+                <h5>Entrez Les Valeurs</h5>
+                @* Form goes here*@
+                <form asp-controller="Home" asp-action="FBPage" method="post">
+                    <div class="form-group">
+                        <label asp-for="FizzValue">FizzValue</label>
+                        <input asp-for="FizzValue" type="number" class="form-control" placeholder="Enter Fizz" value="@Model.FizzValue" />
+                    </div>
+                    <div class="from-group">
+                        <label asp-for="BuzzValue">BuzzValue</label>
+                        <input asp-for="BuzzValue" type="number" class="form-control" placeholder="Enter Buzz" value="@Model.BuzzValue" />
+                    </div>
+                    <button type="submit" class="btn-dark">Submit</button>
+                </form>
+                <h2 class="mt-5 border-bottom border-2">Résultats</h2>
+                <div class="table-responsive">
+                    @*Table goes here*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
