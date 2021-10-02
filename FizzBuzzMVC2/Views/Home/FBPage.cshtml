@@ -1,4 +1,4 @@
-﻿
+﻿@model FizzBuzzMVC2.Models.FizzBuzz
 
 
 <div class="container">
@@ -30,11 +30,23 @@
                         <label asp-for="BuzzValue">BuzzValue</label>
                         <input asp-for="BuzzValue" type="number" class="form-control" placeholder="Enter Buzz" value="@Model.BuzzValue" />
                     </div>
-                    <button type="submit" class="btn-dark">Submit</button>
+                    <button type="submit" class="btn btn-dark mt-3">Submit</button>
                 </form>
                 <h2 class="mt-5 border-bottom border-2">Résultats</h2>
                 <div class="table-responsive">
                     @*Table goes here*@
+                    @if (Model.Result.Count > 0)
+                    {
+                        <table class="table table-primary table-striped table-hover">
+                            <thead>
+                                <tr><th colspan="5" class="text-center">Fizz Buzz Results</th></tr>
+                            </thead>
+                            @for (int i = 0; i < Model.Result.Count(); i += 5)
+                            {
+                                <tr><td>@Model.Result[i]</td><td>@Model.Result[i + 1]</td><td>@Model.Result[i + 2]</td><td>@Model.Result[i + 3]</td><td>@Model.Result[i + 4]</td></tr>
+                            }
+                        </table>
+                    }
                 </div>
             </div>
         </div>
